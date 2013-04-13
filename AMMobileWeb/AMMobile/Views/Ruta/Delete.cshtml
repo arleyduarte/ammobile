@@ -1,0 +1,98 @@
+﻿@model AMMobile.Models.Ruta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Ruta</legend>
+
+    <div class="display-label">RutaNo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RutaNo)
+    </div>
+
+    <div class="display-label">FechaRuta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaRuta)
+    </div>
+
+    <div class="display-label">Direccion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Direccion)
+    </div>
+
+    <div class="display-label">Barrio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Barrio)
+    </div>
+
+    <div class="display-label">Departamento</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Departamento)
+    </div>
+
+    <div class="display-label">Ciudad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ciudad)
+    </div>
+
+    <div class="display-label">Referente</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Referente)
+    </div>
+
+    <div class="display-label">Cuadrante</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cuadrante)
+    </div>
+
+    <div class="display-label">RutaConsecutivo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RutaConsecutivo)
+    </div>
+
+    <div class="display-label">Guia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Guia)
+    </div>
+
+    <div class="display-label">P</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.P)
+    </div>
+
+    <div class="display-label">NotaOperativa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NotaOperativa)
+    </div>
+
+    <div class="display-label">Usuario</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.Cedula)
+    </div>
+
+    <div class="display-label">NombreUsuario</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NombreUsuario)
+    </div>
+
+    <div class="display-label">EstadoRuta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstadoRuta.EstadoNm)
+    </div>
+
+    <div class="display-label">FechaCreacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaCreacion)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

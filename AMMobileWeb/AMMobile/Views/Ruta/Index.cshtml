@@ -1,0 +1,120 @@
+﻿@model IEnumerable<AMMobile.Models.Ruta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="Consolidados">
+<h2>Rutas Programadas</h2>
+<p></p>
+<table  class="table table-bordered">
+    <tr>
+        <th>
+            Ruta No
+        </th>
+        <th>
+            Fecha Ruta
+        </th>
+        <th>
+            Dirección
+        </th>
+        <th>
+            Barrio
+        </th>
+        <th>
+            Departamento
+        </th>
+        <th>
+            Ciudad
+        </th>
+        <th>
+            Referente
+        </th>
+        <th>
+            Cuadrante
+        </th>
+        <th>
+            Consecutivo
+        </th>
+        <th>
+            Guía
+        </th>
+        <th>
+            P
+        </th>
+        <th>
+            Nota Operativa
+        </th>
+
+        <th>
+            Nombre Usuario
+        </th>
+        <th>
+            Estado 
+        </th>
+        <th>
+            Fecha Creación
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RutaNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaRuta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Barrio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Referente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cuadrante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RutaConsecutivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Guia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotaOperativa)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoRuta.EstadoNm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCreacion)
+        </td>
+        <td>
+                <div class="btn-group">
+                    <a class="btn" href="Details/@item.RutaID"><i class="icon-list-alt"></i> Detalles</a>
+                    <a class="btn" href="Delete/@item.RutaID"><i class="icon-trash"></i> Eliminar</a>
+                </div>
+        </td>
+    </tr>
+}
+
+</table>
+
+</div> 

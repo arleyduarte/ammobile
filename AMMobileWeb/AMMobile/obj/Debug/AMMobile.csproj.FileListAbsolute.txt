@@ -1,0 +1,8 @@
+D:\workspaceNet\AMMobile\AMMobile\bin\AMMobile.dll
+D:\workspaceNet\AMMobile\AMMobile\bin\AMMobile.pdb
+D:\workspaceNet\AMMobile\AMMobile\bin\EntityFramework.dll
+D:\workspaceNet\AMMobile\AMMobile\bin\Movi2Criptografia.dll
+D:\workspaceNet\AMMobile\AMMobile\bin\EntityFramework.xml
+D:\workspaceNet\AMMobile\AMMobile\obj\Debug\ResolveAssemblyReference.cache
+D:\workspaceNet\AMMobile\AMMobile\obj\Debug\AMMobile.dll
+D:\workspaceNet\AMMobile\AMMobile\obj\Debug\AMMobile.pdb

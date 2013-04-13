@@ -1,0 +1,83 @@
+﻿@model IEnumerable<AMMobile.Models.ReporteOE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="Consolidados">
+<h2>Reporte OE</h2>
+<p></p>
+<table  class="table table-bordered">
+    <tr>
+        <th>
+            RutaID
+        </th>
+        <th>
+            Fecha Registro
+        </th>
+        <th>
+            INO
+        </th>
+        <th>
+            EG
+        </th>
+        <th>
+            Datos
+        </th>
+        <th>
+            Causal
+        </th>
+        <th>
+            GestionOE
+        </th>
+ 
+        <th>
+            Nombre Usuario
+        </th>
+        <th>
+            Estado 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RutaID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Causal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GestionOE)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoVisita.EstadoNm)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReporteOEID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReporteOEID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReporteOEID })
+        </td>
+    </tr>
+}
+
+</table>
+
+</div> 
