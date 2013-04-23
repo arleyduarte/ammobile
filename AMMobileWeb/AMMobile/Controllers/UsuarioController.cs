@@ -136,7 +136,7 @@ namespace AMMobile.Controllers
             if (usuario != null)
             {
                 status.Success = true;
-                status.Code = 1;
+                status.Code = usuario.UsuarioID;
                 status.Description = usuario.UsuarioID.ToString();
             }
 

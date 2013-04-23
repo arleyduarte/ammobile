@@ -15,11 +15,27 @@
         <legend>Ruta</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.RutaNo)
+            No.
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.RutaNo)
             @Html.ValidationMessageFor(model => model.RutaNo)
+        </div>
+
+        <div class="editor-label">
+            No. D
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RutaConsecutivo)
+            @Html.ValidationMessageFor(model => model.RutaConsecutivo)
+        </div>
+
+        <div class="editor-label">
+            Hora
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Hora)
+            @Html.ValidationMessageFor(model => model.Hora)
         </div>
 
         <div class="editor-label">
@@ -71,20 +87,13 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Cuadrante)
+            @Html.LabelFor(model => model.Sector)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Cuadrante)
-            @Html.ValidationMessageFor(model => model.Cuadrante)
+            @Html.EditorFor(model => model.Sector)
+            @Html.ValidationMessageFor(model => model.Sector)
         </div>
 
-        <div class="editor-label">
-            Consecutivo
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.RutaConsecutivo)
-            @Html.ValidationMessageFor(model => model.RutaConsecutivo)
-        </div>
 
         <div class="editor-label">
             Guía
@@ -95,11 +104,11 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.P)
+            E
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.P)
-            @Html.ValidationMessageFor(model => model.P)
+            @Html.EditorFor(model => model.E)
+            @Html.ValidationMessageFor(model => model.E)
         </div>
 
         <div class="editor-label">
@@ -109,6 +118,8 @@
             @Html.EditorFor(model => model.NotaOperativa)
             @Html.ValidationMessageFor(model => model.NotaOperativa)
         </div>
+
+
 
         <div class="editor-label">
             Responsable

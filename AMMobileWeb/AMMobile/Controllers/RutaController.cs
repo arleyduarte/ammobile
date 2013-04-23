@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using AMMobile.Models;
 using System.Collections;
 using System.IO;
+using System.Text;
 
 namespace AMMobile.Controllers
 { 
@@ -148,37 +149,54 @@ namespace AMMobile.Controllers
                     var path = Path.Combine(Server.MapPath("~/ArchivosSubidos/"), fileName);
                     file.SaveAs(path);
 
-                    StreamReader CsvReader = new StreamReader(path);
+                    StreamReader CsvReader = new StreamReader(path, Encoding.GetEncoding("iso-8859-1"));
+                    
                     string inputLine = "";
+
+                    int contador = 0;
 
                     while ((inputLine = CsvReader.ReadLine()) != null)
                     {
                         var splits = inputLine.Split(',');
-                        Ruta ruta = new Ruta();
-                        ruta.RutaNo = Convert.ToInt32(splits[0]);
-                        ruta.FechaRuta = Convert.ToDateTime(splits[1]);
-                        ruta.Direccion = splits[2];
-                        ruta.Barrio = splits[3];
-                        ruta.Departamento = splits[4];
-                        ruta.Ciudad = splits[5];
-                        ruta.Referente = splits[6];
-                        ruta.Cuadrante = splits[7];
-                        ruta.RutaConsecutivo = Convert.ToInt32(splits[8]);
-                        ruta.Guia = splits[9];
-                        ruta.P = splits[10];
-                        ruta.NotaOperativa = splits[11];
 
-                        ValidadorUsuario vu = new ValidadorUsuario();
+                        if (contador != 0 && splits[1].Length != 0)
+                        {
+             
+                            Ruta ruta = new Ruta();
+                            ruta.RutaNo = Convert.ToInt32(splits[0]);
+                            ruta.FechaRuta = System.DateTime.Now;
+                            ruta.Hora = splits[1];
+                            ruta.RutaConsecutivo =  Convert.ToInt32(splits[2]);
+                            ruta.Guia = splits[3];
+                            ruta.Direccion = splits[4];
+                            ruta.Barrio = splits[5];
+                            ruta.Ciudad = splits[6];
+                            ruta.Departamento = splits[7];
+                            ruta.Referente = splits[8];
+                            ruta.Sector = splits[9];
+                            ruta.E = splits[10];
+                            ruta.NotaOperativa = splits[11];
 
-                        Usuario usuario = vu.getUsuarioByCedula(splits[12]);
-                        ruta.UsuarioID = usuario.UsuarioID;
-                        ruta.NombreUsuario = usuario.NombreUsuario;
-                        ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
-                        ruta.FechaCreacion = System.DateTime.Now;
+                            ValidadorUsuario vu = new ValidadorUsuario();
 
-                        db.Ruta.Add(ruta);
-                        db.SaveChanges();
+                            Usuario usuario = vu.getUsuarioByMovil(splits[12]);
 
+                            if (usuario != null)
+                            {
+                                ruta.UsuarioID = usuario.UsuarioID;
+                                ruta.NombreUsuario = usuario.NombreUsuario;
+                                ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
+                                ruta.FechaCreacion = System.DateTime.Now;
+
+                                db.Ruta.Add(ruta);
+                                db.SaveChanges();
+                            }
+     
+
+                        }
+
+                        contador++;
+                   
 
                     }
                     CsvReader.Close();

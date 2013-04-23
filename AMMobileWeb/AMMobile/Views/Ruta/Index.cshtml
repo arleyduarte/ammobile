@@ -2,119 +2,96 @@
 
 @{
     ViewBag.Title = "Index";
+    WebGrid grid = new WebGrid(Model);
 }
+
 
 <div class="Consolidados">
-<h2>Rutas Programadas</h2>
-<p></p>
-<table  class="table table-bordered">
-    <tr>
-        <th>
-            Ruta No
-        </th>
-        <th>
-            Fecha Ruta
-        </th>
-        <th>
-            Dirección
-        </th>
-        <th>
-            Barrio
-        </th>
-        <th>
-            Departamento
-        </th>
-        <th>
-            Ciudad
-        </th>
-        <th>
-            Referente
-        </th>
-        <th>
-            Cuadrante
-        </th>
-        <th>
-            Consecutivo
-        </th>
-        <th>
-            Guía
-        </th>
-        <th>
-            P
-        </th>
-        <th>
-            Nota Operativa
-        </th>
+<h2>Ruta Courier</h2>
+<p>&nbsp</p>
+@grid.GetHtml(
+        fillEmptyRows: true,
+        alternatingRowStyle: "fila-alternativa",
+        tableStyle: "table table-bordered",
+        footerStyle: "pie-grid",
+        mode: WebGridPagerModes.All,
+        firstText: "<< Primera",
+        previousText: "< Anterior",
+        nextText: "Siguiente >",
+        lastText: "Última >>",
+    columns: new [] {
+         grid.Column("No", 
+                header: "No",
+                format: p=>p.RutaNo),
 
-        <th>
-            Nombre Usuario
-        </th>
-        <th>
-            Estado 
-        </th>
-        <th>
-            Fecha Creación
-        </th>
-        <th></th>
-    </tr>
+         grid.Column("Hora", 
+                header: "Hora",
+                format: p=>p.Hora), 
+                
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RutaNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaRuta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Barrio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Departamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ciudad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Referente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cuadrante)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RutaConsecutivo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Guia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.P)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NotaOperativa)
-        </td>
+         grid.Column("RutaConsecutivo", 
+                header: "No D",
+                format: p=>p.RutaConsecutivo),
+                
+         grid.Column("Guia", 
+                header: "Guía",
+                format: p=>p.Guia),  
+                
+         grid.Column("Direccion", 
+                header: "Dirección",
+                format: p=>p.Direccion),
+                
+         grid.Column("Barrio", 
+                header: "Barrio",
+                format: p=>p.Barrio),
+                
+                
+         grid.Column("Ciudad", 
+                header: "Ciudad",
+                format: p=>p.Ciudad),                                                                 
+                                                                                  
+         grid.Column("Departamento", 
+                header: "Departamento",
+                format: p=>p.Departamento),                                                                 
+                                                                                                       
+                
+         grid.Column("Referente", 
+                header: "Referente",
+                format: p=>p.Referente), 
+                
+         grid.Column("Sector", 
+                header: "Sector",
+                format: p=>p.Sector),   
 
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreUsuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstadoRuta.EstadoNm)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaCreacion)
-        </td>
-        <td>
+         grid.Column("E", 
+                header: "E",
+                format: p=>p.E), 
+                
+         grid.Column("NotaOperativa", 
+                header: "Nota Operativa",
+                format: p=>p.NotaOperativa),
+                
+         grid.Column("Movil", 
+                header: "Móvil",
+                format: p=>p.Usuario.PIN),                                                                   
+                                                 
+         grid.Column(
+                "", 
+                header: "Acciones",
+                format: @<text>
                 <div class="btn-group">
-                    <a class="btn" href="Details/@item.RutaID"><i class="icon-list-alt"></i> Detalles</a>
+                    <a class="btn" href="Edit/@item.RutaID"><i class="icon-edit"></i> Editar</a> 
                     <a class="btn" href="Delete/@item.RutaID"><i class="icon-trash"></i> Eliminar</a>
                 </div>
-        </td>
-    </tr>
-}
+             </text>
+            )                                                                                                   
+              
+                                                
+})
 
-</table>
 
-</div> 
+</div>
+
+ <div class="btn-group">
+     <a class="btn" href="javascript:history.go(-1)"><i class="icon-step-backward"></i> Regresar</a>
+</div>

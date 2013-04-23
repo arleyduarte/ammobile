@@ -2,82 +2,81 @@
 
 @{
     ViewBag.Title = "Index";
+    WebGrid grid = new WebGrid(Model);
 }
+
 
 <div class="Consolidados">
-<h2>Reporte OE</h2>
-<p></p>
-<table  class="table table-bordered">
-    <tr>
-        <th>
-            RutaID
-        </th>
-        <th>
-            Fecha Registro
-        </th>
-        <th>
-            INO
-        </th>
-        <th>
-            EG
-        </th>
-        <th>
-            Datos
-        </th>
-        <th>
-            Causal
-        </th>
-        <th>
-            GestionOE
-        </th>
- 
-        <th>
-            Nombre Usuario
-        </th>
-        <th>
-            Estado 
-        </th>
-        <th></th>
-    </tr>
+<h2>Ruta Courier</h2>
+<p>&nbsp</p>
+@grid.GetHtml(
+        fillEmptyRows: true,
+        alternatingRowStyle: "fila-alternativa",
+        tableStyle: "table table-bordered",
+        footerStyle: "pie-grid",
+        mode: WebGridPagerModes.All,
+        firstText: "<< Primera",
+        previousText: "< Anterior",
+        nextText: "Siguiente >",
+        lastText: "Última >>",
+    columns: new [] {
+         grid.Column("No", 
+                header: "No",
+                format: p=>p.ReporteOEID),
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RutaID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaRegistro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.INO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Datos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Causal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GestionOE)
-        </td>
+         grid.Column("FechaRegistro", 
+                header: "Fecha Registro",
+                format: p=>p.FechaRegistro.ToString("dd/MM/yyyy")), 
+                
 
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreUsuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstadoVisita.EstadoNm)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReporteOEID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReporteOEID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReporteOEID })
-        </td>
-    </tr>
-}
+         grid.Column("INO", 
+                header: "INO",
+                format: p=>p.INO),
+                
+         grid.Column("EG", 
+                header: "EG",
+                format: p=>p.EG),  
+                
+         grid.Column("Datos", 
+                header: "Datos",
+                format: p=>p.Datos),
+                
+         grid.Column("Causal", 
+                header: "Causal",
+                format: p=>p.Causal),
+                
+                                                            
+                                                                                  
+         grid.Column("GestionOE", 
+                header: "Gestión OE",
+                format: p=>p.GestionOE),                                                                 
+                                                                                                       
+                
+         grid.Column("E-NE", 
+                header: "E-NE",
+                format: p=>p.EstadoVisita.EstadoNm),  
+                
+         grid.Column("Movil", 
+                header: "Móvil",
+                format: p=>p.Usuario.PIN),                                                                   
+                                                 
+         grid.Column(
+                "", 
+                header: "Acciones",
+                format: @<text>
+                <div class="btn-group">
+                    <a class="btn" href="Delete/@item.ReporteOEID"><i class="icon-trash"></i> Eliminar</a>
+                </div>
+             </text>
+            )                                                                                                   
+              
+                                                
+})
 
-</table>
 
-</div> 
+</div>
+
+
+ <div class="btn-group">
+     <a class="btn" href="javascript:history.go(-1)"><i class="icon-step-backward"></i> Regresar</a>
+</div>

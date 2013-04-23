@@ -21,10 +21,11 @@ namespace AMMobile.Models
         public String Departamento { get; set; }
         public String Ciudad { get; set; }
         public String Referente { get; set; }
-        public String Cuadrante { get; set; }
+        public String Sector { get; set; }
         public int RutaConsecutivo { get; set; }
         public String Guia { get; set; }
-        public String P { get; set; }
+        public String E { get; set; }
+        public String Hora { get; set; }
         public String NotaOperativa { get; set; }
         public int UsuarioID { get; set; }
         public String NombreUsuario { get; set; }

@@ -62,6 +62,15 @@ namespace AMMobile.Models
                         && p.Estado == Usuario.ACTIVO
                             select p).SingleOrDefault();
 
+            if (item == null)
+            {
+                item = (from p in db.Usuarios
+                                where p.NombreUsuario == login
+                                && p.Clave == clave
+                                && p.Estado == Usuario.ACTIVO
+                                select p).SingleOrDefault();
+
+            }
 
             return item;
         }
@@ -100,6 +109,23 @@ namespace AMMobile.Models
             return item;
         }
 
+        public Usuario getUsuarioByMovil(String movil)
+        {
+            try
+            {
+                Usuario item = (from p in db.Usuarios
+                            where p.PIN == movil
 
+                            select p).SingleOrDefault();
+
+
+            return item;
+     
+            }catch(Exception e){
+                return null;
+
+            }
+
+          }
     }
 }
