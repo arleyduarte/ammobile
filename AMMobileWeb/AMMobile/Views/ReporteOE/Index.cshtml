@@ -29,6 +29,14 @@
                 format: p=>p.FechaRegistro.ToString("dd/MM/yyyy")), 
                 
 
+         grid.Column("FechaRegistro", 
+                header: "Hora Registro",
+                format: p=>p.FechaRegistro.ToString("HH:mm")), 
+
+         grid.Column("Movil", 
+                header: "Móvil",
+                format: p=>p.Usuario.PIN),                
+         
          grid.Column("INO", 
                 header: "INO",
                 format: p=>p.INO),
@@ -56,9 +64,7 @@
                 header: "E-NE",
                 format: p=>p.EstadoVisita.EstadoNm),  
                 
-         grid.Column("Movil", 
-                header: "Móvil",
-                format: p=>p.Usuario.PIN),                                                                   
+                                                                   
                                                  
          grid.Column(
                 "", 

@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <setParameter name="IIS Web Application Name" value="Default Web Site/AMMobile_deploy" />
-  <setParameter name="EfDbContext-Web.config Connection String" value="Data Source=ARLEY-PC;Initial Catalog=AMMobile;Persist Security Info=True;User ID=sa;Password=123456;Connection Timeout=60;multipleactiveresultsets=true" />
-</parameters>

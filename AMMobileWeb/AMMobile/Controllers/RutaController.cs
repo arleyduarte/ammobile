@@ -157,7 +157,7 @@ namespace AMMobile.Controllers
 
                     while ((inputLine = CsvReader.ReadLine()) != null)
                     {
-                        var splits = inputLine.Split(',');
+                        var splits = inputLine.Split(';');
 
                         if (contador != 0 && splits[1].Length != 0)
                         {
