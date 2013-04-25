@@ -1,0 +1,31 @@
+<loader version="1.0">
+	<application id="AMMobile">
+		<name >
+			AMMobile
+		</name>
+		<description >
+			
+		</description>
+		<version >
+			1.0.0
+		</version>
+		<vendor >
+			Commercial Global Group
+		</vendor>
+		<copyright >
+			Copyright (c) 2013 Commercial Global Group
+		</copyright>
+		<fileset Java="1.55" _blackberryVersion="[5.0.0)">
+			<directory >
+				5.0.0
+			</directory>
+			<files >
+				AMMobile.cod
+
+			</files>
+
+		</fileset>
+
+	</application>
+
+</loader>
