@@ -1,8 +1,4 @@
-﻿@{
-    Layout = "~/Views/Shared/_LayoutAdministrator.cshtml";
-}
-
-@model AMMobile.Models.Usuario
+﻿@model AMMobile.Models.Usuario
 
 @{
     ViewBag.Title = "Create";
@@ -40,7 +36,7 @@
         </div>
         <div class="editor-field">
             @Html.DropDownList("Rol")
-            @Html.ValidationMessageFor(model => model.Rol)
+            @Html.ValidationMessageFor(model => model.RolNm)
         </div>
 
         <div class="editor-label">
@@ -51,6 +47,14 @@
             @Html.ValidationMessageFor(model => model.Telefono)
         </div>
 
+
+        <div class="editor-label">
+            Móvil
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PIN)
+            @Html.ValidationMessageFor(model => model.PIN)
+        </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.Celular)
         </div>

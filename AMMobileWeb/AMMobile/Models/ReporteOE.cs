@@ -23,6 +23,7 @@ namespace AMMobile.Models
 
         public virtual Usuario Usuario { get; set; }
         public virtual EstadoVisita EstadoVisita { get; set; }
+        public virtual Ruta Ruta { get; set; }
 
     }
 }

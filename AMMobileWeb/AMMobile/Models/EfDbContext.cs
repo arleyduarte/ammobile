@@ -42,6 +42,11 @@ namespace AMMobile.Models
                 .HasRequired(n => n.EstadoVisita)
                 .WithMany()
                 .HasForeignKey(n => n.EstadoVisitaID);
+
+            modelBuilder.Entity<ReporteOE>()
+                .HasRequired(n => n.Ruta)
+                .WithMany()
+                .HasForeignKey(n => n.RutaID);
           }
 
         public DbSet<TipoRol> TipoRoles { get; set; }

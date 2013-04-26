@@ -22,7 +22,11 @@ $(document).ready(function () {
         if ($('#FechaRuta').val() == "") { $('#FechaRuta').attr('value', dToday); }
         $('#FechaRuta').datepicker({ format: 'mm/dd/yyyy' });
 
+        if ($('#FiltroReporteOE_FechaFinal').val() == "") { $('#FiltroReporteOE_FechaFinal').attr('value', dToday); }
+        $('#FiltroReporteOE_FechaFinal').datepicker({ format: 'mm/dd/yyyy' });
 
+        if ($('#FiltroReporteOE_FechaInicial').val() == "") { $('#FiltroReporteOE_FechaInicial').attr('value', dToday); }
+        $('#FiltroReporteOE_FechaInicial').datepicker({ format: 'mm/dd/yyyy' });
 
     });
 
