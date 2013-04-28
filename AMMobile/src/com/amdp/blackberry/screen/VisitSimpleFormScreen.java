@@ -51,11 +51,11 @@ public class VisitSimpleFormScreen extends MainScreen implements
 			"Zona Roja", "Dificil Acceso", "Incumplimiento CO",
 			"Incumplimiento CL", "3 Gestiones OE Fallidas", "Otro" };
 
-	private String codigoCausal[] = { "D2-3", "D2-4", "D2-5", "D2-6", "D2-7",
-			"D2-8", "D2-9", "D2-10", "D2-11", "D2-12", "D2-13", "D2-14",
-			"D2-15", "D2-16", "D2-17", "D2-18", "G2-1", "G2-2", "G2-3", "G2-4",
-			"G2-5", "G2-6", "G2-7", "G2-8", "G2-9", "G2-10", "G2-11", "G2-12",
-			"G2-13", "G2-14", "G2-15", "G2-16", "G2-17" };
+	private String codigoCausal[] = { "D23", "D24", "D25", "D26", "D27",
+			"D28", "D29", "D210", "D211", "D212", "D213", "D214",
+			"D215", "D216", "D217", "D218", "G21", "G22", "G23", "G24",
+			"G25", "G26", "G27", "G28", "G29", "G210", "G211", "G212",
+			"G213", "G214", "G215", "G216", "G217" };
 
 	private EditField inoEditField = new EditField("", "", 200,
 			EditField.EDITABLE);
