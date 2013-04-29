@@ -1,0 +1,134 @@
+﻿@model AMMobile.Models.BuscadorReporteOEViewModel
+@{
+
+    ViewBag.Title = "ReporteOE";
+    WebGrid grid = new WebGrid(Model.ReporteOE, canPage: false, canSort: true);
+}
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#UsuarioID").removeClass("input-validation-error cssClass").addClass("yourClass");
+   
+        var cliente = $("#UsuarioID");
+        updateInfo();
+        cliente.change(function () {
+            updateInfo();
+
+        });
+
+        function updateInfo() {
+            $("#FiltroReporteOE_UsuarioID").val(cliente.val());
+        }
+
+    });
+
+</script>
+<div class="Consolidados">
+<h2>Reporte OE</h2>
+<br />
+@using (Html.BeginForm("ReporteOE", "Reportes", FormMethod.Post, new { id = "formId" }))
+{
+    @Html.ValidationSummary(true)
+
+        <div class="editor-date">
+            
+            @Html.DropDownList("UsuarioID", null, "Todos", new { @class = "cssClass" })
+        
+            Fecha Inicial
+            @Html.EditorFor(model => model.FiltroReporteOE.FechaInicial)
+            @Html.ValidationMessageFor(model => model.FiltroReporteOE.FechaInicial)
+
+            Fecha Final
+            @Html.EditorFor(model => model.FiltroReporteOE.FechaFinal)
+            @Html.ValidationMessageFor(model => model.FiltroReporteOE.FechaFinal)
+
+            @Html.HiddenFor(model => model.FiltroReporteOE.UsuarioID)
+
+           <input type="submit" value="Buscar" />
+
+        </div>    
+    
+}
+@grid.GetHtml(
+        fillEmptyRows: true,
+        alternatingRowStyle: "fila-alternativa",
+        tableStyle: "table table-bordered",
+        footerStyle: "pie-grid",
+        mode: WebGridPagerModes.All,
+        firstText: "<< Primera",
+        previousText: "< Anterior",
+        nextText: "Siguiente >",
+        lastText: "Última >>",
+    columns: new [] {
+         grid.Column("No", 
+                header: "No",
+                format: p=>p.ReporteOEID),
+                
+         grid.Column("Guia", 
+                header: "Guía",
+                format: p=>p.Ruta.Guia),                   
+
+         grid.Column("FechaRegistro", 
+                header: "Fecha Reporte",
+                format: p=>p.FechaRegistro.ToString("dd/MM/yyyy")), 
+ 
+                 
+
+         grid.Column("FechaRegistro", 
+                header: "Hora Reporte",
+                format: p=>p.FechaRegistro.ToString("HH:mm")), 
+
+         grid.Column("Movil", 
+                header: "Móvil",
+                format: p=>p.Usuario.PIN),                
+         
+         grid.Column("INO", 
+                header: "INO",
+                format: p=>p.INO),
+                
+         grid.Column("EG", 
+                header: "EG",
+                format: p=>p.EG),  
+                
+         grid.Column("Datos", 
+                header: "Datos",
+                format: p=>p.Datos),
+                
+         grid.Column("Causal", 
+                header: "Causal",
+                format: p=>p.Causal),
+                
+                                                            
+                                                                                  
+         grid.Column("GestionOE", 
+                header: "Gestión OE",
+                format: p=>p.GestionOE),                                                                 
+                                                                                                       
+                
+         grid.Column("E-NE", 
+                header: "E-NE",
+                format: p=>p.EstadoVisita.EstadoNm),  
+                
+                                                                   
+                                                 
+         grid.Column(
+                "", 
+                header: "Acciones",
+                format: @<text>
+                <div class="btn-group">
+                    <a class="btn" href="Delete/@item.ReporteOEID"><i class="icon-trash"></i> Eliminar</a>
+                </div>
+             </text>
+            )                                                                                                   
+              
+                                                
+})
+
+
+</div>
+
+
+ <div class="btn-group">
+     <a class="btn" href="javascript:history.go(-1)"><i class="icon-step-backward"></i> Regresar</a>
+</div>

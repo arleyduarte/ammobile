@@ -220,9 +220,9 @@ namespace AMMobile.Controllers
                         &&
                         p.EstadoRutaID == EstadoRuta.RUTA_PENDIENTE
         
-                        && p.FechaRuta.Year == fechaR.Year
-                        && p.FechaRuta.Month == fechaR.Month
-                        && p.FechaRuta.Day == fechaR.Day
+                      //  && p.FechaRuta.Year == fechaR.Year
+                      //  && p.FechaRuta.Month == fechaR.Month
+                      //  && p.FechaRuta.Day == fechaR.Day
                         select p;
             foreach (Ruta item in items)
             {
