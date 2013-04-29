@@ -67,8 +67,11 @@
                 
          grid.Column("Guia", 
                 header: "Guía",
-                format: p=>p.Ruta.Guia),                   
-
+                format: p=>p.Ruta.Guia),  
+				
+         grid.Column("Movil", 
+                header: "Móvil",
+                format: p=>p.Usuario.PIN),  
          grid.Column("FechaRegistro", 
                 header: "Fecha Reporte",
                 format: p=>p.FechaRegistro.ToString("dd/MM/yyyy")), 
@@ -79,9 +82,7 @@
                 header: "Hora Reporte",
                 format: p=>p.FechaRegistro.ToString("HH:mm")), 
 
-         grid.Column("Movil", 
-                header: "Móvil",
-                format: p=>p.Usuario.PIN),                
+              
          
          grid.Column("INO", 
                 header: "INO",
