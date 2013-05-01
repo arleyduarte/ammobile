@@ -58,6 +58,13 @@
         </div>
 
         <div class="editor-label">
+            Móvil
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PIN)
+            @Html.ValidationMessageFor(model => model.PIN)
+        </div>
+        <div class="editor-label">
             @Html.LabelFor(model => model.Email)
         </div>
         <div class="editor-field">
