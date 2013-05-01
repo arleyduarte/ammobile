@@ -44,19 +44,24 @@ namespace AMMobile.Controllers
                              select p;
 
 
+            DateTime fechaInicial = new DateTime(viewModel.FiltroReporteOE.FechaInicial.Year, viewModel.FiltroReporteOE.FechaInicial.Month, viewModel.FiltroReporteOE.FechaInicial.Day);
+            DateTime fechaFinal = new DateTime(viewModel.FiltroReporteOE.FechaFinal.Year, viewModel.FiltroReporteOE.FechaFinal.Month, viewModel.FiltroReporteOE.FechaFinal.Day);
+            fechaFinal = fechaFinal.AddHours(23);
+            fechaFinal = fechaFinal.AddMinutes(59);
+
             if (viewModel.FiltroReporteOE.UsuarioID == 0)
             {
                 reportesOD = from p in db.ReporteOE
-                             where p.FechaRegistro >= viewModel.FiltroReporteOE.FechaInicial
-                             && p.FechaRegistro <= viewModel.FiltroReporteOE.FechaFinal
+                             where p.FechaRegistro >= fechaInicial
+                             && p.FechaRegistro <= fechaFinal
                              orderby p.FechaRegistro descending
                              select p;
             }
             else
             {
                 reportesOD = from p in db.ReporteOE
-                             where p.FechaRegistro >= viewModel.FiltroReporteOE.FechaInicial
-                             && p.FechaRegistro <= viewModel.FiltroReporteOE.FechaFinal
+                             where p.FechaRegistro >= fechaInicial
+                             && p.FechaRegistro <= fechaFinal
                              && p.UsuarioID == viewModel.FiltroReporteOE.UsuarioID
                              orderby p.FechaRegistro descending
                              select p;

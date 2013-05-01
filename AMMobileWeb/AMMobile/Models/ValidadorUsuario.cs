@@ -115,6 +115,7 @@ namespace AMMobile.Models
             {
                 Usuario item = (from p in db.Usuarios
                             where p.PIN == movil
+                            && p.Estado == Usuario.ACTIVO
 
                             select p).SingleOrDefault();
 

@@ -24,8 +24,8 @@ namespace AMMobile.Controllers
             DateTime fechaR = System.DateTime.Now;
             var rutas = from p in db.Ruta
                          where p.FechaRuta.Year == fechaR.Year
-                        && p.FechaRuta.Month == fechaR.Month
-                        && p.FechaRuta.Day == fechaR.Day
+                     
+                    
                         orderby p.FechaCreacion descending
                         select p;
 
@@ -64,6 +64,9 @@ namespace AMMobile.Controllers
         public ActionResult Create(Ruta ruta)
         {
             ruta.FechaCreacion = System.DateTime.Now;
+
+            Usuario usuario = db.Usuarios.Find(ruta.UsuarioID);
+            ruta.NombreUsuario = usuario.NombreUsuario;
 
             if (ModelState.IsValid)
             {

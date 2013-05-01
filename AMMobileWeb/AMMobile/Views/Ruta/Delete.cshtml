@@ -9,7 +9,7 @@
 <fieldset>
     <legend>¿Está seguro que desea elimiar esta la ruta  @Html.DisplayFor(model => model.Guia)?</legend>
 
-
+ @Html.HiddenFor(model => model.RutaID)
     
 @using (Html.BeginForm())
 {
