@@ -24,7 +24,7 @@ namespace AMMobile.Controllers
             DateTime fechaR = System.DateTime.Now;
             var rutas = from p in db.Ruta
                          where p.FechaRuta.Year == fechaR.Year
-                     
+                        && p.EstadoRutaID == EstadoRuta.RUTA_PENDIENTE
                     
                         orderby p.FechaCreacion descending
                         select p;
@@ -226,6 +226,7 @@ namespace AMMobile.Controllers
                       //  && p.FechaRuta.Year == fechaR.Year
                       //  && p.FechaRuta.Month == fechaR.Month
                       //  && p.FechaRuta.Day == fechaR.Day
+                        orderby p.RutaNo 
                         select p;
             foreach (Ruta item in items)
             {
