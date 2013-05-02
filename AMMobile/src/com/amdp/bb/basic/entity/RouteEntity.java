@@ -85,7 +85,7 @@ public class RouteEntity implements APIRemoteObject {
 		this.code = code;
 	}
 	public String getDescription() {
-		String info = code + " "
+		String info = rutaNo + " "
 				+ hora +" "
 				+ consecutivo;
 		
