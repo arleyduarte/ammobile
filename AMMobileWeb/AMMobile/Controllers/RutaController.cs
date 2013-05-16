@@ -26,7 +26,7 @@ namespace AMMobile.Controllers
                          where p.FechaRuta.Year == fechaR.Year
                         && p.EstadoRutaID == EstadoRuta.RUTA_PENDIENTE
                     
-                        orderby p.FechaCreacion descending
+                        orderby p.FechaCreacion
                         select p;
 
             return View(rutas);
@@ -53,7 +53,6 @@ namespace AMMobile.Controllers
         public ActionResult Create()
         {
             ViewBag.UsuarioID = new SelectList(db.Usuarios, "UsuarioID", "NombreUsuario");
-            ViewBag.EstadoRutaID = new SelectList(db.EstadoRuta, "EstadoRutaID", "EstadoNm");
             return View();
         } 
 
@@ -64,9 +63,9 @@ namespace AMMobile.Controllers
         public ActionResult Create(Ruta ruta)
         {
             ruta.FechaCreacion = System.DateTime.Now;
-
             Usuario usuario = db.Usuarios.Find(ruta.UsuarioID);
             ruta.NombreUsuario = usuario.NombreUsuario;
+			ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
 
             if (ModelState.IsValid)
             {
@@ -76,7 +75,6 @@ namespace AMMobile.Controllers
             }
 
             ViewBag.UsuarioID = new SelectList(db.Usuarios, "UsuarioID", "NombreUsuario", ruta.UsuarioID);
-            ViewBag.EstadoRutaID = new SelectList(db.EstadoRuta, "EstadoRutaID", "EstadoNm", ruta.EstadoRutaID);
             return View(ruta);
         }
         
@@ -87,7 +85,6 @@ namespace AMMobile.Controllers
         {
             Ruta ruta = db.Ruta.Find(id);
             ViewBag.UsuarioID = new SelectList(db.Usuarios, "UsuarioID", "NombreUsuario", ruta.UsuarioID);
-            ViewBag.EstadoRutaID = new SelectList(db.EstadoRuta, "EstadoRutaID", "EstadoNm", ruta.EstadoRutaID);
             return View(ruta);
         }
 
@@ -97,8 +94,13 @@ namespace AMMobile.Controllers
         [HttpPost]
         public ActionResult Edit(Ruta ruta)
         {
+		
+		si referente es null llenarlo
             ruta.FechaCreacion = System.DateTime.Now;
-
+			ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
+            Usuario usuario = db.Usuarios.Find(ruta.UsuarioID);
+            ruta.NombreUsuario = usuario.NombreUsuario;
+			
             if (ModelState.IsValid)
             {
                 db.Entry(ruta).State = EntityState.Modified;
@@ -106,7 +108,6 @@ namespace AMMobile.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.UsuarioID = new SelectList(db.Usuarios, "UsuarioID", "NombreUsuario", ruta.UsuarioID);
-            ViewBag.EstadoRutaID = new SelectList(db.EstadoRuta, "EstadoRutaID", "EstadoNm", ruta.EstadoRutaID);
             return View(ruta);
         }
 

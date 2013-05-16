@@ -36,7 +36,7 @@ namespace AMMobile.Models
         [Required(ErrorMessage = "*")]
         public String Email { get; set; }
 
-
+        [Required(ErrorMessage = "*")]
         public String PIN { get; set; }
 
         [StringLength(40, ErrorMessage = "Longitud Máxima 40")]

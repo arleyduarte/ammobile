@@ -19,8 +19,9 @@ namespace AMMobile.Controllers
 
         public ViewResult Index()
         {
-            //var usuarios = db.Usuarios.Include(u => u.TipoRol);
-            var usuarios = db.Usuarios;
+            var usuarios = from p in db.Usuarios
+				         orderby p.PIN
+                        select p;
             return View(usuarios.ToList());
         }
 
@@ -70,6 +71,7 @@ namespace AMMobile.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
+		reviar edicion usuario
             Usuario usuario = db.Usuarios.Find(id);
             ViewBag.Rol = new SelectList(db.TipoRoles, "RolNm", "Descripcion", usuario.RolNm);
             return View(usuario);
