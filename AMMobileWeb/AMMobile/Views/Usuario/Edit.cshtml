@@ -37,7 +37,7 @@
            Rol
         </div>
         <div class="editor-field">
-            @Html.DropDownList("Rol")
+            @Html.DropDownList("RolNm")
             @Html.ValidationMessageFor(model => model.RolNm)
         </div>
 
@@ -98,11 +98,11 @@
 
 
         <p>
-            <input type="submit" value="Editar" />
+            <input type="submit" value="Editar" class="btn btn-primary" />
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Regresar", "Index")
+ <div class="btn-group">
+     <a class="btn" href="javascript:history.go(-1)"><i class="icon-step-backward"></i> Regresar</a>
 </div>

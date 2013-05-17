@@ -39,7 +39,7 @@ namespace AMMobile.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
-            ViewBag.Rol = new SelectList(db.TipoRoles, "RolNm", "Descripcion");
+            ViewBag.RolNm = new SelectList(db.TipoRoles, "RolNm", "Descripcion");
             return View();
         }
 
@@ -62,7 +62,7 @@ namespace AMMobile.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Rol = new SelectList(db.TipoRoles, "RolNm", "Descripcion", usuario.RolNm);
+            ViewBag.RolNm = new SelectList(db.TipoRoles, "RolNm", "Descripcion", usuario.RolNm);
             return View(usuario);
         }
 
@@ -71,9 +71,9 @@ namespace AMMobile.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
-		reviar edicion usuario
+		//reviar edicion usuario
             Usuario usuario = db.Usuarios.Find(id);
-            ViewBag.Rol = new SelectList(db.TipoRoles, "RolNm", "Descripcion", usuario.RolNm);
+            ViewBag.RolNm = new SelectList(db.TipoRoles, "RolNm", "Descripcion", usuario.RolNm);
             return View(usuario);
         }
 
@@ -93,7 +93,7 @@ namespace AMMobile.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Rol = new SelectList(db.TipoRoles, "RolNm", "Descripcion", usuario.RolNm);
+            ViewBag.RolNm = new SelectList(db.TipoRoles, "RolNm", "Descripcion", usuario.RolNm);
             return View(usuario);
         }
 

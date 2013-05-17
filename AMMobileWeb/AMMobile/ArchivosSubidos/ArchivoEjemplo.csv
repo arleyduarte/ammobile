@@ -1,2 +1,4 @@
-1,2013-04-13 00:00:00,Carrera 103 A No 133 A 22,Cota Azul,Cundinamarca,Bogota,Arley,cuadrante,1,guia,p,nota,1012370886
-1,2013-04-13 00:00:00,Otra Carrera 103 A No 133 A 22,Cota Azul,Cundinamarca,Bogota,Mauricio,cuadrante,1,guia,p,nota,1012370886
+No.;Hora;No. D;Gu¡a;Direcccion;Barrio;Ciudad;Departamento;Referente;Sector;E;Nota Operativa;Movil
+1;09:05;1;9000567843;Cl 19 No. 65 -23 xxxxxxx;Montevideo;Cali;Cundinamarca;Diagonal Carrefour Maxi;125;9C;P4 - Efectividad;1
+2;09:10;1;9000567844;Cl 19 No. 65 -23 xxxxxxx;Montevideo;Cali;Cundinamarca;Diagonal Carrefour Maxi;125;9S;N/A;1
+3;09:15;1;9000567845;Cl 19 No. 65 -23 xxxxxxx;Montevideo;Cali;Cundinamarca;Diagonal Carrefour Maxi;125;9F;P4 - Efectividad;4

@@ -23,12 +23,13 @@ namespace AMMobile.Controllers
         {
             DateTime fechaR = System.DateTime.Now;
             var rutas = from p in db.Ruta
-                         where p.FechaRuta.Year == fechaR.Year
-                        && p.EstadoRutaID == EstadoRuta.RUTA_PENDIENTE
+                         where 
+                        p.EstadoRutaID == EstadoRuta.RUTA_PENDIENTE
                     
-                        orderby p.FechaCreacion
+                        orderby p.Usuario.PIN, p.RutaNo
                         select p;
 
+           
             return View(rutas);
         }
 
@@ -62,10 +63,8 @@ namespace AMMobile.Controllers
         [HttpPost]
         public ActionResult Create(Ruta ruta)
         {
-            ruta.FechaCreacion = System.DateTime.Now;
-            Usuario usuario = db.Usuarios.Find(ruta.UsuarioID);
-            ruta.NombreUsuario = usuario.NombreUsuario;
-			ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
+
+            fillValues(ruta);
 
             if (ModelState.IsValid)
             {
@@ -80,6 +79,35 @@ namespace AMMobile.Controllers
         
         //
         // GET: /Ruta/Edit/5
+
+        private void fillValues(Ruta ruta)
+        {
+
+            ruta.FechaCreacion = System.DateTime.Now;
+            Usuario usuario = db.Usuarios.Find(ruta.UsuarioID);
+            ruta.NombreUsuario = usuario.NombreUsuario;
+            ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
+
+            if (ruta.E == null)
+            {
+                ruta.E = "";
+            }
+
+            if (ruta.NotaOperativa == null)
+            {
+                ruta.NotaOperativa = "";
+            }
+
+            if (ruta.Referente == null)
+            {
+                ruta.Referente = "";
+            }
+
+            if (ruta.Sector == null)
+            {
+                ruta.Sector = "";
+            }
+        }
  
         public ActionResult Edit(int id)
         {
@@ -94,13 +122,9 @@ namespace AMMobile.Controllers
         [HttpPost]
         public ActionResult Edit(Ruta ruta)
         {
-		
-		si referente es null llenarlo
-            ruta.FechaCreacion = System.DateTime.Now;
-			ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
-            Usuario usuario = db.Usuarios.Find(ruta.UsuarioID);
-            ruta.NombreUsuario = usuario.NombreUsuario;
-			
+
+            fillValues(ruta);
+
             if (ModelState.IsValid)
             {
                 db.Entry(ruta).State = EntityState.Modified;
