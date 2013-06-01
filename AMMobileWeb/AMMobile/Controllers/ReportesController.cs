@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AMMobile.Models;
+using System.Web.UI.WebControls;
+using System.Data;
 
 namespace AMMobile.Controllers
 {
@@ -80,8 +82,71 @@ namespace AMMobile.Controllers
                 ReporteOE = reportesOD
             };
 
+            prepareReport(reportesOD);
             ViewBag.UsuarioID = new SelectList(db.Usuarios.OrderBy(x => x.NombreUsuario), "UsuarioID", "Nombre", viewModel.FiltroReporteOE.UsuarioID);
             return View(model);
+        }
+
+
+
+
+        private void prepareReport(IOrderedQueryable<Models.ReporteOE> reportesOD)
+        {
+            DataTable dt = new DataTable();
+            DataColumn noDataColumn = new DataColumn("No", typeof(string));
+            DataColumn guiaDataColumn = new DataColumn("Guia", typeof(string));
+            DataColumn horaAsignacionDataColumn = new DataColumn("Hora_Asignacion", typeof(string));
+            DataColumn horaReporteDataColumn = new DataColumn("Hora_Reporte", typeof(string));
+            DataColumn movilDataColumn = new DataColumn("Movil", typeof(string));
+            DataColumn inoDataColumn = new DataColumn("INO", typeof(string));
+            DataColumn egDataColumn = new DataColumn("EG", typeof(string));
+            DataColumn datosDataColumn = new DataColumn("Datos", typeof(string));
+            DataColumn causalDataColumn = new DataColumn("Causal", typeof(string));
+            DataColumn gestionOEDataColumn = new DataColumn("Gestion_OE", typeof(string));
+            DataColumn eneOEDataColumn = new DataColumn("E-NE", typeof(string));
+
+            dt.Columns.Add(noDataColumn);
+            dt.Columns.Add(guiaDataColumn);
+            dt.Columns.Add(horaAsignacionDataColumn);
+            dt.Columns.Add(horaReporteDataColumn);
+            dt.Columns.Add(movilDataColumn);
+            dt.Columns.Add(inoDataColumn);
+            dt.Columns.Add(egDataColumn);
+            dt.Columns.Add(datosDataColumn);
+            dt.Columns.Add(causalDataColumn);
+            dt.Columns.Add(gestionOEDataColumn);
+            dt.Columns.Add(eneOEDataColumn);
+
+
+            DataRow dr;
+            foreach (ReporteOE report in reportesOD)
+            {
+                dr = dt.NewRow();
+                dr["No"] = report.Ruta.RutaNo.ToString();
+                dr["Guia"] = report.Ruta.Guia;
+                dr["Hora_Asignacion"] = report.Ruta.Hora;
+                dr["Hora_Reporte"] = report.FechaRegistro.ToShortTimeString();
+                dr["Movil"] = report.Ruta.Usuario.PIN;
+                dr["INO"] = report.INO;
+                dr["EG"] = report.EG;
+                dr["Datos"] = report.Datos;
+                dr["Causal"] = report.Causal;
+                dr["Gestion_OE"] = report.GestionOE;
+                dr["E-NE"] = report.EstadoVisita.EstadoNm;
+                dt.Rows.Add(dr);
+            }
+
+            GridView gv = new GridView();
+
+            gv.DataSource = dt;
+            gv.DataBind();
+            Session["ReporteOE"] = gv;
+        }
+
+
+        public ActionResult Download()
+        {
+            return new DownloadFileActionResult((GridView)Session["ReporteOE"], "ReporteOE.xls");
         }
     }
 }

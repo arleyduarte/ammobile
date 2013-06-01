@@ -32,7 +32,6 @@
     @Html.ValidationSummary(true)
 
         <div class="editor-date">
-            
             @Html.DropDownList("UsuarioID", null, "Todos", new { @class = "cssClass" })
         
             Fecha Inicial
@@ -46,9 +45,9 @@
             @Html.HiddenFor(model => model.FiltroReporteOE.UsuarioID)
 
            <input type="submit" value="Buscar" />
-
+           <a href="/Reportes/Download" class="btn btn-mini btn-success">Descargar Archivo</a>   
         </div>    
-    
+ 
 }
 @grid.GetHtml(
         fillEmptyRows: true,
@@ -60,18 +59,18 @@
         previousText: "< Anterior",
         nextText: "Siguiente >",
         lastText: "Última >>",
-    columns: new [] {
+    columns: new[] {
          grid.Column("No", 
                 header: "No",
-                format: p=>p.ReporteOEID),
+                format: p=>p.Ruta.RutaNo),
                 
          grid.Column("Guia", 
                 header: "Guía",
                 format: p=>p.Ruta.Guia),                   
 
          grid.Column("FechaRegistro", 
-                header: "Fecha Reporte",
-                format: p=>p.FechaRegistro.ToString("dd/MM/yyyy")), 
+                header: "Hora Asignación",
+                format: p=>p.Ruta.Hora), 
  
                  
 
@@ -117,7 +116,7 @@
                 header: "Acciones",
                 format: @<text>
                 <div class="btn-group">
-                    <a class="btn" href="Delete/@item.ReporteOEID"><i class="icon-trash"></i> Eliminar</a>
+                    <a class="btn" href="../ReporteOE/Delete/@item.ReporteOEID"><i class="icon-trash"></i> Eliminar</a>
                 </div>
              </text>
             )                                                                                                   
