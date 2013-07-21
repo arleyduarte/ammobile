@@ -84,6 +84,9 @@ namespace AMMobile.Controllers
         {
 
             ruta.FechaCreacion = System.DateTime.Now;
+            ruta.FechaRegistroControlador = System.DateTime.Now;
+            ruta.ModificadaPorControlador = false;
+
             Usuario usuario = db.Usuarios.Find(ruta.UsuarioID);
             ruta.NombreUsuario = usuario.NombreUsuario;
             ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;

@@ -1,0 +1,222 @@
+﻿@model AMMobile.Models.BuscadorRutaViewModel
+@{
+
+    ViewBag.Title = "RutaCOR";
+    WebGrid grid = new WebGrid(Model.Ruta, canPage: false, canSort: true);
+}
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#UsuarioID").removeClass("input-validation-error cssClass").addClass("yourClass");
+
+        var cliente = $("#UsuarioID");
+        updateInfo();
+        cliente.change(function () {
+            updateInfo();
+           
+
+        });
+
+        function updateInfo() {
+            $("#FiltroReporteOE_UsuarioID").val(cliente.val());
+        }
+
+
+
+
+
+    });
+
+
+
+</script>
+<div class="Consolidados">
+<h2>COR</h2>
+<br />
+@using (Html.BeginForm("RutaCOR", "RutaCOR", FormMethod.Post, new { id = "formId" }))
+{
+    @Html.ValidationSummary(true)
+
+        <div class="editor-date">
+            @Html.DropDownList("UsuarioID", null, "Todos", new { @class = "cssClass" })
+        
+            Fecha Inicial
+            @Html.EditorFor(model => model.FiltroReporteOE.FechaInicial)
+            @Html.ValidationMessageFor(model => model.FiltroReporteOE.FechaInicial)
+
+            Fecha Final
+            @Html.EditorFor(model => model.FiltroReporteOE.FechaFinal)
+            @Html.ValidationMessageFor(model => model.FiltroReporteOE.FechaFinal)
+
+            @Html.HiddenFor(model => model.FiltroReporteOE.UsuarioID)
+
+           <input type="submit" value="Buscar" />
+         
+        </div>    
+ 
+}
+
+@grid.GetHtml(
+        fillEmptyRows: true,
+        alternatingRowStyle: "fila-alternativa",
+        tableStyle: "table table-bordered",
+        footerStyle: "pie-grid",
+        mode: WebGridPagerModes.All,
+        firstText: "<< Primera",
+        previousText: "< Anterior",
+        nextText: "Siguiente >",
+        lastText: "Última >>",
+    columns: new [] {
+         grid.Column("No", 
+                header: "No",
+                format: p=>p.RutaNo),
+
+         grid.Column("Hora", 
+                header: "Hora",
+                format: p=>p.Hora), 
+                
+
+         grid.Column("RutaConsecutivo", 
+                header: "No D",
+                format: p=>p.RutaConsecutivo),
+                
+         grid.Column("Guia", 
+                header: "Guía",
+                format: p=>p.Guia),  
+                
+         grid.Column("Direccion", 
+                header: "Dirección",
+                format: p=>p.Direccion),
+                
+         grid.Column("Barrio", 
+                header: "Barrio",
+                format: p=>p.Barrio),
+                
+                
+         grid.Column("Ciudad", 
+                header: "Ciudad",
+                format: p=>p.Ciudad),                                                                 
+                                                                                  
+         grid.Column("Departamento", 
+                header: "Departamento",
+                format: p=>p.Departamento),                                                                 
+                                                                                                       
+                
+         grid.Column("Referente", 
+                header: "Referente",
+                format: p=>p.Referente), 
+                
+         grid.Column("Sector", 
+                header: "Sector",
+                format: p=>p.Sector),   
+
+         grid.Column("E", 
+                header: "E",
+                format: p=>p.E), 
+                
+         grid.Column("NotaOperativa", 
+                header: "Nota Operativa",
+                format: p=>p.NotaOperativa),
+                
+         grid.Column("Movil", 
+                header: "Móvil",
+                format: p=>p.Usuario.PIN),                                                                   
+                                                 
+         grid.Column(
+                "", 
+                header: "Acciones",
+                format: @<text>
+                <div class="btn-group">
+                    <a class="btn btn-info" href="javascript:;" data-p1="@item.RutaID" data-p2="@item.Guia"><i class="icon-edit"></i> Editar</a> 
+   
+                 
+                </div>
+             </text>
+            )                                                                                                   
+              
+                                                
+})
+
+
+</div>
+
+
+ <div class="btn-group">
+     <a class="btn" href="javascript:history.go(-1)"><i class="icon-step-backward"></i> Regresar</a>
+</div>
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">COR</h3>
+  </div>
+
+  <form action="UpdateCOR" method="post"  id="formFileId" enctype="multipart/form-data">
+  <div class="modal-body">
+
+        <div class="editor-field">
+            <input type="hidden" name="myModalRutaId" id="myModalRutaId" value="0" />
+            <input type="hidden" name="myModalUsuarioId" id="myModalUsuarioId" value="0" />
+            <input type="hidden" name="myMFechaInicio" id="myMFechaInicio" value="" />
+            <input type="hidden" name="myMFechaFinal" id="myMFechaFinal" value="" />
+        </div>
+
+        <table>
+            <tr>
+                <td>INO</td>
+                <td><input  data-val="true" data-val-required="*" id="myMINO" name="myMINO" type="text" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>EG</td>
+                <td><input class="text-box single-line" data-val="true" data-val-required="*" id="myMEG" name="myMEG" type="text" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>Datos</td>
+                <td><input class="text-box single-line" data-val="true" data-val-required="*" id="myDatos" name="myDatos" type="text" value="" /></td>
+            </tr>
+
+            <tr>
+                <td>Causal</td>
+                <td><input class="text-box single-line" data-val="true" data-val-required="*" id="myCausal" name="myCausal" type="text" value="" /></td>
+            </tr>
+        </table>
+ 
+  </div>
+
+
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+  </div>
+  </form>
+</div>
+
+<script>
+    function cap1(para1, para2) {
+        alert(para1);
+    }
+
+    $(function () {
+        $('.btn-info').click(function () {
+            var $this = $(this);
+            var p1 = $this.data('p1');
+            var p2 = $this.data('p2');
+            showModal(p1, p2);
+        });
+
+        function showModal(rutaId, guia) {
+            //alert("f");
+            $('#myMFechaInicio').val($("#FiltroReporteOE_FechaInicial").val());
+            $('#myMFechaFinal').val($("#FiltroReporteOE_FechaFinal").val());
+            $('#myModalUsuarioId').val($("#UsuarioID").val());
+            $('#myModalRutaId').val(rutaId);
+            $('#myModalLabel').text('Guía: '+guia);
+            $('#myModal').modal('show');
+        }
+    });
+
+</script>

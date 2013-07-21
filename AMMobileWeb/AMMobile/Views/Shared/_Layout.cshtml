@@ -9,6 +9,7 @@
     <script src="@Url.Content("~/Scripts/bootstrap/bootstrap-dropdown.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/bootstrap/bootstrap-collapse.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/bootstrap/bootstrap-datepicker.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Utilidades.js")" type="text/javascript"></script>
 
       <link href="@Url.Content("~/Content/css/bootstrap.css")" rel="stylesheet" type="text/css" />
@@ -57,6 +58,7 @@
                       <li>@Html.ActionLink("Listar", "Index", "Ruta")</li>
                       <li>@Html.ActionLink("Crear", "Create", "Ruta")</li>
                       <li>@Html.ActionLink("Cargar Rutas", "Upload", "Ruta")</li>
+                      <li>@Html.ActionLink("COR", "RutaCOR", "RutaCOR")</li>
 
                     </ul>
                   </li>
@@ -65,6 +67,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporte<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                        <li>@Html.ActionLink("Reporte OE", "ReporteOE", "Reportes")</li>
+                       <li>@Html.ActionLink("Reporte RINO COR", "ReporteRino", "ReporteRinoCOR")</li>
+
                     </ul>
                   </li>
 

@@ -45,6 +45,14 @@ namespace AMMobile.Models
         public int EstadoRutaID { get; set; }
         public DateTime FechaCreacion { get; set; }
 
+        public String INO { get; set; }
+        public String EG { get; set; }
+        public String Datos { get; set; }
+        public String Causal { get; set; }
+        public String NombreControlador { get; set; }
+        public DateTime FechaRegistroControlador { get; set; }
+        public Boolean ModificadaPorControlador { get; set; }
+
         public virtual Usuario Usuario { get; set; }
         public virtual EstadoRuta EstadoRuta { get; set; }
 

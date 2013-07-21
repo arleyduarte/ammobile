@@ -10,13 +10,13 @@ using System.Data;
 namespace AMMobile.Controllers
 {
     [Authorize]
-    public class ReportesController : Controller
+    public class ReporteRinoCORController : Controller
     {
         //
         private EfDbContext db = new EfDbContext();
 
-        [Authorize(Roles = "Admin")]
-        public ActionResult ReporteOE()
+        [Authorize(Roles = "Admin, Controlador")]
+        public ActionResult ReporteRino()
         {
             var reportesOD = from p in db.ReporteOE
                            where p.ReporteOEID == 0
@@ -43,8 +43,8 @@ namespace AMMobile.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public ActionResult ReporteOE(BuscadorReporteOEViewModel viewModel)
+        [Authorize(Roles = "Admin, Controlador")]
+        public ActionResult ReporteRino(BuscadorReporteOEViewModel viewModel)
         {
             var reportesOD = from p in db.ReporteOE
                              where p.ReporteOEID == 0
