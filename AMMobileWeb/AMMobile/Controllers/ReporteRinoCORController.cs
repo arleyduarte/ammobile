@@ -111,24 +111,34 @@ namespace AMMobile.Controllers
             DataColumn horaAsignacionDataColumn = new DataColumn("Hora_Asignacion", typeof(string));
             DataColumn horaReporteDataColumn = new DataColumn("Hora_Reporte", typeof(string));
             DataColumn movilDataColumn = new DataColumn("Movil", typeof(string));
+
+            DataColumn inoCORDataColumn = new DataColumn("INO COR", typeof(string));
+            DataColumn egCORDataColumn = new DataColumn("EG COR", typeof(string));
+            DataColumn datosCORDataColumn = new DataColumn("Datos COR", typeof(string));
+            DataColumn causalCORDataColumn = new DataColumn("Causal COR", typeof(string));
+
             DataColumn inoDataColumn = new DataColumn("INO", typeof(string));
             DataColumn egDataColumn = new DataColumn("EG", typeof(string));
             DataColumn datosDataColumn = new DataColumn("Datos", typeof(string));
             DataColumn causalDataColumn = new DataColumn("Causal", typeof(string));
-            DataColumn gestionOEDataColumn = new DataColumn("Gestion_OE", typeof(string));
-            DataColumn eneOEDataColumn = new DataColumn("E-NE", typeof(string));
+
 
             dt.Columns.Add(noDataColumn);
             dt.Columns.Add(guiaDataColumn);
             dt.Columns.Add(horaAsignacionDataColumn);
             dt.Columns.Add(horaReporteDataColumn);
             dt.Columns.Add(movilDataColumn);
+
+            dt.Columns.Add(inoCORDataColumn);
+            dt.Columns.Add(egCORDataColumn);
+            dt.Columns.Add(datosCORDataColumn);
+            dt.Columns.Add(causalCORDataColumn);
+
             dt.Columns.Add(inoDataColumn);
             dt.Columns.Add(egDataColumn);
             dt.Columns.Add(datosDataColumn);
             dt.Columns.Add(causalDataColumn);
-            dt.Columns.Add(gestionOEDataColumn);
-            dt.Columns.Add(eneOEDataColumn);
+
 
 
             DataRow dr;
@@ -140,12 +150,17 @@ namespace AMMobile.Controllers
                 dr["Hora_Asignacion"] = report.Ruta.Hora;
                 dr["Hora_Reporte"] = report.FechaRegistro.ToShortTimeString();
                 dr["Movil"] = report.Ruta.Usuario.PIN;
+
+                dr["INO COR"] = report.Ruta.INO;
+                dr["EG COR"] = report.Ruta.EG;
+                dr["Datos COR"] = report.Ruta.Datos;
+                dr["Causal COR"] = report.Ruta.Causal;
+                
                 dr["INO"] = report.INO;
                 dr["EG"] = report.EG;
                 dr["Datos"] = report.Datos;
                 dr["Causal"] = report.Causal;
-                dr["Gestion_OE"] = report.GestionOE;
-                dr["E-NE"] = report.EstadoVisita.EstadoNm;
+
                 dt.Rows.Add(dr);
             }
 
@@ -153,13 +168,13 @@ namespace AMMobile.Controllers
 
             gv.DataSource = dt;
             gv.DataBind();
-            Session["ReporteOE"] = gv;
+            Session["ReporteRINO"] = gv;
         }
 
 
         public ActionResult Download()
         {
-            return new DownloadFileActionResult((GridView)Session["ReporteOE"], "ReporteOE.xls");
+            return new DownloadFileActionResult((GridView)Session["ReporteRINO"], "ReporteRINO.xls");
         }
     }
 }

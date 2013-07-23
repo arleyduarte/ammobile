@@ -45,7 +45,7 @@
             @Html.HiddenFor(model => model.FiltroReporteOE.UsuarioID)
 
            <input type="submit" value="Buscar" />
-           <a href="/Reportes/Download" class="btn btn-mini btn-success">Descargar Archivo</a>   
+           <a href="../ReporteRinoCOR/Download" class="btn btn-mini btn-success">Descargar Archivo</a>   
         </div>    
  
 }
@@ -83,49 +83,37 @@
                 format: p=>p.Usuario.PIN),                
          
          grid.Column("INO", 
-                header: "INO",
+                header: "INO COR",
                 format: p=>p.Ruta.INO),
                 
          grid.Column("EG", 
-                header: "EG",
+                header: "EG COR",
                 format: p=>p.Ruta.EG),  
                 
          grid.Column("Datos", 
-                header: "Datos",
+                header: "Datos COR",
                 format: p=>p.Ruta.Datos),
                 
          grid.Column("Causal COR", 
                 header: "Causal COR",
                 format: p=>p.Ruta.Causal),
-                                                
+                
+         grid.Column("INO", 
+                header: "INO",
+                format: p=>p.INO),
+                
+         grid.Column("EG", 
+                header: "EG",
+                format: p=>p.EG),  
+                
+         grid.Column("Datos", 
+                header: "Datos",
+                format: p=>p.Datos),
+ 
          grid.Column("Causal", 
                 header: "Causal",
-                format: p=>p.Causal),
-                
-                                                            
-                                                                                  
-         grid.Column("GestionOE", 
-                header: "Gestión OE",
-                format: p=>p.GestionOE),                                                                 
-                                                                                                       
-                
-         grid.Column("E-NE", 
-                header: "E-NE",
-                format: p=>p.EstadoVisita.EstadoNm),  
-                
-                
-                
-                                                                   
-                                                 
-         grid.Column(
-                "", 
-                header: "Acciones",
-                format: @<text>
-                <div class="btn-group">
-                    <a class="btn" href="../ReporteOE/Delete/@item.ReporteOEID"><i class="icon-trash"></i> Eliminar</a>
-                </div>
-             </text>
-            )                                                                                                   
+                format: p=>p.Causal)
+                                                                                                              
               
                                                 
 })

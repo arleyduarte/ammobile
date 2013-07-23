@@ -88,7 +88,11 @@ namespace AMMobile.Controllers
             ruta.ModificadaPorControlador = false;
 
             Usuario usuario = db.Usuarios.Find(ruta.UsuarioID);
-            ruta.NombreUsuario = usuario.NombreUsuario;
+            if (usuario != null)
+            {
+                ruta.NombreUsuario = usuario.NombreUsuario;
+            }
+
             ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
 
             if (ruta.E == null)
@@ -208,12 +212,15 @@ namespace AMMobile.Controllers
                             ruta.E = splits[10];
                             ruta.NotaOperativa = splits[11];
 
+          
+
                             ValidadorUsuario vu = new ValidadorUsuario();
 
                             Usuario usuario = vu.getUsuarioByMovil(splits[12]);
 
                             if (usuario != null)
                             {
+                                fillValues(ruta);
                                 ruta.UsuarioID = usuario.UsuarioID;
                                 ruta.NombreUsuario = usuario.NombreUsuario;
                                 ruta.EstadoRutaID = EstadoRuta.RUTA_PENDIENTE;
