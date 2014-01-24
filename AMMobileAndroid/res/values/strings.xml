@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AMMobile</string>
+    <string name="server_URL">http://50.63.154.203/AMMobile</string>
+    <string name="nav_title">AM Mobile</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
