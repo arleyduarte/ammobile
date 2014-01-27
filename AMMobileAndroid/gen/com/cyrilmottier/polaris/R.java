@@ -34,8 +34,8 @@ public final class R {
 		public static final int polaris__unable_to_locate_you = 0x7f060007;
 	}
 	public static final class layout {
-		public static final int polaris__user_tracking_button = 0x7f030008;
-		public static final int polaris__map_callout_view_merge = 0x7f030007;
+		public static final int polaris__user_tracking_button = 0x7f030007;
+		public static final int polaris__map_callout_view_merge = 0x7f030006;
 	}
 	public static final class drawable {
 		public static final int polaris__map_callout_bottom_anchor_pressed = 0x7f02000d;

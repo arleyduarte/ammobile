@@ -31,8 +31,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppBaseThemeNoTitleBar" >
         </activity>
+        
+         <activity
+            android:name="com.amdp.android.basic.gui.RouteActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseThemeNoTitleBar" >
+        </activity>
+               
         <activity
-            android:name=".MainActivity"
+            android:name=".AMReportVisitActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" >

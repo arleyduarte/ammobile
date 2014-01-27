@@ -9,33 +9,33 @@ package com.amdp.android.basic.gui;
 public final class R {
 	public static final class id {
 		public static final int polaris__disclosure = 0x7f0c0010;
-		public static final int next_button = 0x7f0c001a;
+		public static final int next_button = 0x7f0c0020;
 		public static final int confirm_new_password = 0x7f0c0001;
 		public static final int password = 0x7f0c0006;
 		public static final int ok_button = 0x7f0c0002;
-		public static final int sub_title = 0x7f0c0013;
+		public static final int sub_title = 0x7f0c0019;
 		public static final int polaris__subtitle = 0x7f0c000f;
 		public static final int username = 0x7f0c0005;
-		public static final int title = 0x7f0c0012;
-		public static final int search = 0x7f0c0017;
-		public static final int name = 0x7f0c0015;
+		public static final int title = 0x7f0c0018;
+		public static final int search = 0x7f0c001d;
+		public static final int name = 0x7f0c001b;
 		public static final int polaris__content = 0x7f0c000d;
-		public static final int myLocationText = 0x7f0c0018;
+		public static final int myLocationText = 0x7f0c001e;
 		public static final int login_button = 0x7f0c0007;
 		public static final int polaris__content_container = 0x7f0c000c;
-		public static final int polaris_map_view = 0x7f0c0019;
-		public static final int schedule_date = 0x7f0c0014;
+		public static final int polaris_map_view = 0x7f0c001f;
+		public static final int schedule_date = 0x7f0c001a;
 		public static final int icon = 0x7f0c0009;
 		public static final int text = 0x7f0c000a;
 		public static final int scroll = 0x7f0c0003;
 		public static final int polaris__callout = 0x7f0c000b;
 		public static final int polaris__title = 0x7f0c000e;
-		public static final int address = 0x7f0c0016;
-		public static final int menu_settings = 0x7f0c001c;
+		public static final int address = 0x7f0c001c;
+		public static final int menu_settings = 0x7f0c0022;
 		public static final int main_layout = 0x7f0c0004;
 		public static final int new_password = 0x7f0c0000;
 		public static final int main_menu_listview = 0x7f0c0008;
-		public static final int route_listview = 0x7f0c0011;
+		public static final int route_listview = 0x7f0c0017;
 	}
 	public static final class anim {
 		public static final int polaris__shrink_fade_out_to_bottom = 0x7f040001;
@@ -45,7 +45,9 @@ public final class R {
 		public static final int TextAppearance_Polaris_MapCallout_Subtitle = 0x7f090003;
 		public static final int form_text_style = 0x7f090005;
 		public static final int menu_style = 0x7f090006;
+		public static final int styleRuteItem = 0x7f090008;
 		public static final int form_editext_style = 0x7f090007;
+		public static final int styleRuteItemSubTitle = 0x7f090009;
 		public static final int TextAppearance_Polaris_MapCallout_Title = 0x7f090002;
 		public static final int TextAppearance_Polaris = 0x7f090000;
 		public static final int TextAppearance_Polaris_MapCallout = 0x7f090001;
@@ -97,20 +99,20 @@ public final class R {
 	}
 	public static final class layout {
 		public static final int splash = 0x7f03000e;
-		public static final int polaris__map_callout_view_merge = 0x7f030007;
+		public static final int polaris__map_callout_view_merge = 0x7f030006;
 		public static final int where_am_i_polaris = 0x7f03000f;
-		public static final int change_password = 0x7f030001;
-		public static final int main_menu = 0x7f030005;
+		public static final int change_password = 0x7f030000;
+		public static final int main_menu = 0x7f030004;
 		public static final int route_inflate = 0x7f03000a;
 		public static final int schedule = 0x7f03000c;
-		public static final int grill_entity_layout = 0x7f030003;
+		public static final int grill_entity_layout = 0x7f030002;
 		public static final int route_search = 0x7f03000b;
 		public static final int search = 0x7f03000d;
 		public static final int route = 0x7f030009;
-		public static final int menu_adapter = 0x7f030006;
-		public static final int login = 0x7f030004;
-		public static final int empty_layout = 0x7f030002;
-		public static final int polaris__user_tracking_button = 0x7f030008;
+		public static final int menu_adapter = 0x7f030005;
+		public static final int login = 0x7f030003;
+		public static final int empty_layout = 0x7f030001;
+		public static final int polaris__user_tracking_button = 0x7f030007;
 	}
 	public static final class drawable {
 		public static final int polaris__map_callout_bottom_anchor_pressed = 0x7f02000d;

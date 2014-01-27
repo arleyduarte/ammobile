@@ -65,18 +65,22 @@ public final class R {
         public static final int splash=0x7f020016;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c001b;
-        public static final int address=0x7f0c0016;
+        public static final int action_settings=0x7f0c0021;
+        public static final int address=0x7f0c001c;
+        public static final int causal_spinner=0x7f0c0016;
         public static final int confirm_new_password=0x7f0c0001;
+        public static final int datosEditText=0x7f0c0015;
+        public static final int egEditText=0x7f0c0014;
         public static final int icon=0x7f0c0009;
+        public static final int inoEditText=0x7f0c0013;
         public static final int login_button=0x7f0c0007;
         public static final int main_layout=0x7f0c0004;
         public static final int main_menu_listview=0x7f0c0008;
-        public static final int menu_settings=0x7f0c001c;
-        public static final int myLocationText=0x7f0c0018;
-        public static final int name=0x7f0c0015;
+        public static final int menu_settings=0x7f0c0022;
+        public static final int myLocationText=0x7f0c001e;
+        public static final int name=0x7f0c001b;
         public static final int new_password=0x7f0c0000;
-        public static final int next_button=0x7f0c001a;
+        public static final int next_button=0x7f0c0020;
         public static final int ok_button=0x7f0c0002;
         public static final int password=0x7f0c0006;
         public static final int polaris__callout=0x7f0c000b;
@@ -85,14 +89,16 @@ public final class R {
         public static final int polaris__disclosure=0x7f0c0010;
         public static final int polaris__subtitle=0x7f0c000f;
         public static final int polaris__title=0x7f0c000e;
-        public static final int polaris_map_view=0x7f0c0019;
-        public static final int route_listview=0x7f0c0011;
-        public static final int schedule_date=0x7f0c0014;
+        public static final int polaris_map_view=0x7f0c001f;
+        public static final int routeInfo=0x7f0c0012;
+        public static final int routeTitle=0x7f0c0011;
+        public static final int route_listview=0x7f0c0017;
+        public static final int schedule_date=0x7f0c001a;
         public static final int scroll=0x7f0c0003;
-        public static final int search=0x7f0c0017;
-        public static final int sub_title=0x7f0c0013;
+        public static final int search=0x7f0c001d;
+        public static final int sub_title=0x7f0c0019;
         public static final int text=0x7f0c000a;
-        public static final int title=0x7f0c0012;
+        public static final int title=0x7f0c0018;
         public static final int username=0x7f0c0005;
     }
     public static final class integer {
@@ -104,15 +110,15 @@ public final class R {
         public static final int polaris__decelerate_quint=0x7f050001;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int change_password=0x7f030001;
-        public static final int empty_layout=0x7f030002;
-        public static final int grill_entity_layout=0x7f030003;
-        public static final int login=0x7f030004;
-        public static final int main_menu=0x7f030005;
-        public static final int menu_adapter=0x7f030006;
-        public static final int polaris__map_callout_view_merge=0x7f030007;
-        public static final int polaris__user_tracking_button=0x7f030008;
+        public static final int change_password=0x7f030000;
+        public static final int empty_layout=0x7f030001;
+        public static final int grill_entity_layout=0x7f030002;
+        public static final int login=0x7f030003;
+        public static final int main_menu=0x7f030004;
+        public static final int menu_adapter=0x7f030005;
+        public static final int polaris__map_callout_view_merge=0x7f030006;
+        public static final int polaris__user_tracking_button=0x7f030007;
+        public static final int report_visit_form=0x7f030008;
         public static final int route=0x7f030009;
         public static final int route_inflate=0x7f03000a;
         public static final int route_search=0x7f03000b;
@@ -176,13 +182,13 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f090008;
-        public static final int AppBaseThemeNoTitleBar=0x7f09000a;
+        public static final int AppBaseTheme=0x7f09000a;
+        public static final int AppBaseThemeNoTitleBar=0x7f09000c;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f090009;
-        public static final int LightTabWidget=0x7f09000b;
+        public static final int AppTheme=0x7f09000b;
+        public static final int LightTabWidget=0x7f09000d;
         public static final int TextAppearance_Polaris=0x7f090000;
         public static final int TextAppearance_Polaris_MapCallout=0x7f090001;
         public static final int TextAppearance_Polaris_MapCallout_Subtitle=0x7f090003;
@@ -255,5 +261,7 @@ public final class R {
     
          */
         public static final int styleNavBar=0x7f090004;
+        public static final int styleRuteItem=0x7f090008;
+        public static final int styleRuteItemSubTitle=0x7f090009;
     }
 }
