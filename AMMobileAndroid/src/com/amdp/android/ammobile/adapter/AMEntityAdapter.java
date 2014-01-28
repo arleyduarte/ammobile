@@ -18,7 +18,6 @@ import com.google.gson.Gson;
 
 public class AMEntityAdapter implements EntityAdapter {
 
-
 	@Override
 	public User userFromJson(String json) {
 		Gson gson = new Gson();
@@ -26,9 +25,9 @@ public class AMEntityAdapter implements EntityAdapter {
 		User user = new User();
 		user.setUserId(status.getCode());
 		user.setName(status.getDescription());
-		
+
 		UserBLL.getInstanceBLL().setCurrentUser(user);
-		
+
 		return user;
 	}
 
@@ -61,12 +60,11 @@ public class AMEntityAdapter implements EntityAdapter {
 			aux.setP(json.getString("E"));
 			aux.setNote(json.getString("NotaOperativa"));
 
-
 		} catch (JSONException e) {
-			
+
 		}
 		return aux;
-		
+
 	}
 
 	@Override
@@ -78,13 +76,7 @@ public class AMEntityAdapter implements EntityAdapter {
 	@Override
 	public void assignWrapperViewItems(ArrayList<WrapperViewItem> wrapperViewItems) {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
-
-
-
-
 
 }

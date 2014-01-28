@@ -7,7 +7,6 @@ import org.apache.http.message.BasicNameValuePair;
 import com.amdp.android.basic.handler.UserValidationResourceHandler;
 import com.amdp.android.network.NetworkContants;
 
-
 public class AMUserValidationResourceHandler extends UserValidationResourceHandler {
 
 	@Override

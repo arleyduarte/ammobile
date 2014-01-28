@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_repeating"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/routeTitle"
+            style="@style/form_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/nav_brand_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="#eeeeee"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/routeInfo"
+            style="@style/form_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#eeeeee"
+            android:textSize="15sp"
+            android:text="" />
+
+        <TextView
+            style="@style/form_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INO" />
+
+        <EditText
+            android:id="@+id/inoEditText"
+            style="@style/form_editext_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+        <TextView
+            style="@style/form_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EG" />
+
+        <EditText
+            android:id="@+id/egEditText"
+            style="@style/form_editext_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+        <TextView
+            style="@style/form_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Datos" />
+
+        <EditText
+            android:id="@+id/datosEditText"
+            style="@style/form_editext_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+        <TextView
+            style="@style/form_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Causal" />
+
+        <Spinner
+            android:id="@+id/causal_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/accept"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</ScrollView>

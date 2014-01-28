@@ -9,7 +9,7 @@ package com.amdp.android.basic.gui;
 public final class R {
 	public static final class id {
 		public static final int polaris__disclosure = 0x7f0c0010;
-		public static final int next_button = 0x7f0c0020;
+		public static final int next_button = 0x7f0c0021;
 		public static final int confirm_new_password = 0x7f0c0001;
 		public static final int password = 0x7f0c0006;
 		public static final int ok_button = 0x7f0c0002;
@@ -20,10 +20,10 @@ public final class R {
 		public static final int search = 0x7f0c001d;
 		public static final int name = 0x7f0c001b;
 		public static final int polaris__content = 0x7f0c000d;
-		public static final int myLocationText = 0x7f0c001e;
+		public static final int myLocationText = 0x7f0c001f;
 		public static final int login_button = 0x7f0c0007;
 		public static final int polaris__content_container = 0x7f0c000c;
-		public static final int polaris_map_view = 0x7f0c001f;
+		public static final int polaris_map_view = 0x7f0c0020;
 		public static final int schedule_date = 0x7f0c001a;
 		public static final int icon = 0x7f0c0009;
 		public static final int text = 0x7f0c000a;
@@ -31,7 +31,7 @@ public final class R {
 		public static final int polaris__callout = 0x7f0c000b;
 		public static final int polaris__title = 0x7f0c000e;
 		public static final int address = 0x7f0c001c;
-		public static final int menu_settings = 0x7f0c0022;
+		public static final int menu_settings = 0x7f0c0023;
 		public static final int main_layout = 0x7f0c0004;
 		public static final int new_password = 0x7f0c0000;
 		public static final int main_menu_listview = 0x7f0c0008;
@@ -115,29 +115,29 @@ public final class R {
 		public static final int polaris__user_tracking_button = 0x7f030007;
 	}
 	public static final class drawable {
-		public static final int polaris__map_callout_bottom_anchor_pressed = 0x7f02000d;
-		public static final int polaris__btn_map_overlay_focused = 0x7f020006;
-		public static final int splash = 0x7f020016;
-		public static final int nav_logo = 0x7f020003;
-		public static final int polaris__ic_map_locate = 0x7f020009;
-		public static final int polaris__map_callout_right_cap_pressed = 0x7f020015;
-		public static final int polaris__map_callout_left_cap = 0x7f02000e;
-		public static final int polaris__btn_map_overlay = 0x7f020005;
-		public static final int polaris__map_callout_bottom_anchor_focused = 0x7f02000b;
-		public static final int polaris__btn_map_overlay_normal = 0x7f020007;
-		public static final int polaris__map_callout_bottom_anchor_normal = 0x7f02000c;
-		public static final int polaris__arrow_to_right = 0x7f020004;
+		public static final int polaris__map_callout_bottom_anchor_pressed = 0x7f02000e;
+		public static final int polaris__btn_map_overlay_focused = 0x7f020007;
+		public static final int splash = 0x7f020017;
+		public static final int nav_logo = 0x7f020004;
+		public static final int polaris__ic_map_locate = 0x7f02000a;
+		public static final int polaris__map_callout_right_cap_pressed = 0x7f020016;
+		public static final int polaris__map_callout_left_cap = 0x7f02000f;
+		public static final int polaris__btn_map_overlay = 0x7f020006;
+		public static final int polaris__map_callout_bottom_anchor_focused = 0x7f02000c;
+		public static final int polaris__btn_map_overlay_normal = 0x7f020008;
+		public static final int polaris__map_callout_bottom_anchor_normal = 0x7f02000d;
+		public static final int polaris__arrow_to_right = 0x7f020005;
 		public static final int background_repeating = 0x7f020001;
-		public static final int polaris__map_callout_right_cap_focused = 0x7f020013;
+		public static final int polaris__map_callout_right_cap_focused = 0x7f020014;
 		public static final int background = 0x7f020000;
-		public static final int polaris__map_callout_right_cap_normal = 0x7f020014;
+		public static final int polaris__map_callout_right_cap_normal = 0x7f020015;
 		public static final int ic_launcher = 0x7f020002;
-		public static final int polaris__map_callout_bottom_anchor = 0x7f02000a;
-		public static final int polaris__map_callout_left_cap_focused = 0x7f02000f;
-		public static final int polaris__btn_map_overlay_pressed = 0x7f020008;
-		public static final int polaris__map_callout_left_cap_normal = 0x7f020010;
-		public static final int polaris__map_callout_right_cap = 0x7f020012;
-		public static final int polaris__map_callout_left_cap_pressed = 0x7f020011;
+		public static final int polaris__map_callout_bottom_anchor = 0x7f02000b;
+		public static final int polaris__map_callout_left_cap_focused = 0x7f020010;
+		public static final int polaris__btn_map_overlay_pressed = 0x7f020009;
+		public static final int polaris__map_callout_left_cap_normal = 0x7f020011;
+		public static final int polaris__map_callout_right_cap = 0x7f020013;
+		public static final int polaris__map_callout_left_cap_pressed = 0x7f020012;
 	}
 	public static final class interpolator {
 		public static final int polaris__decelerate_cubic = 0x7f050000;

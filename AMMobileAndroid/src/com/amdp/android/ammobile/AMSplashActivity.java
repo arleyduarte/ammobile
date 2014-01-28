@@ -14,6 +14,7 @@ public class AMSplashActivity extends SplashActivity {
 
 	@Override
 	public void configApp() {
+		timeForSplash = 2000;
         final String serverURL = getString(R.string.server_URL);
         NetworkContants.setServer(serverURL);
         
