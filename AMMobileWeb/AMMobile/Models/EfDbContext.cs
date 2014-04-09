@@ -13,6 +13,10 @@ namespace AMMobile.Models
         public DbSet<Ruta> Ruta { get; set; }
         public DbSet<EstadoVisita> EstadoVisita { get; set; }
         public DbSet<ReporteOE> ReporteOE { get; set; }
+
+        public DbSet<RangosHora> RangosHora { get; set; }
+        public DbSet<RangosDistancia> RangosDistancia { get; set; }
+
         protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<TipoOperacion>().HasKey(b => b.IdTipoOperacion);

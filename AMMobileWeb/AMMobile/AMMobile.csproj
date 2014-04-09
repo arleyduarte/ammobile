@@ -83,11 +83,14 @@
     <Compile Include="Models\EstadoRuta.cs" />
     <Compile Include="Models\EfDbContext.cs" />
     <Compile Include="Models\FiltroReporteOE.cs" />
+    <Compile Include="Models\RangosDistancia.cs" />
+    <Compile Include="Models\RangosHora.cs" />
     <Compile Include="Models\ReporteOE.cs" />
     <Compile Include="Models\Ruta.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\TipoRol.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\ValidadorRangos.cs" />
     <Compile Include="Models\ValidadorUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

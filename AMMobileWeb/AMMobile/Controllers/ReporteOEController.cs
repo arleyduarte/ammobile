@@ -126,6 +126,10 @@ namespace AMMobile.Controllers
             Usuario usuario = vu.getUsuarioById(reporte.UsuarioID);
             reporte.NombreUsuario = usuario.NombreUsuario;
 
+            ValidadorRangos vr = new ValidadorRangos();
+            reporte.RangoHora = vr.GetRangoHora(reporte.RutaID);
+            reporte.RangoDistancia = vr.GetRangoDistancia(reporte);
+
             try
             {
                 db.ReporteOE.Add(reporte);

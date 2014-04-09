@@ -27,6 +27,7 @@ namespace AMMobile.Controllers
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
+
             if (ModelState.IsValid)
             {
 
@@ -93,6 +94,7 @@ namespace AMMobile.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+
                     return RedirectToAction("Index", "Home");
                 }
                 else

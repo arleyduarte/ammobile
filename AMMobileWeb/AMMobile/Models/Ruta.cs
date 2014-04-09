@@ -53,6 +53,9 @@ namespace AMMobile.Models
         public DateTime FechaRegistroControlador { get; set; }
         public Boolean ModificadaPorControlador { get; set; }
 
+        public String Latitud { get; set; }
+        public String Longitud { get; set; }
+
         public virtual Usuario Usuario { get; set; }
         public virtual EstadoRuta EstadoRuta { get; set; }
 
