@@ -59,6 +59,8 @@ public class AMEntityAdapter implements EntityAdapter {
 			aux.setGuide(json.getString("Guia"));
 			aux.setP(json.getString("E"));
 			aux.setNote(json.getString("NotaOperativa"));
+			aux.setVenueLatitude(json.getString("latitud"));
+			aux.setVenueLongitude(json.getString("longitud"));
 
 		} catch (JSONException e) {
 

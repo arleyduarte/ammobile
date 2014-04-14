@@ -10,6 +10,7 @@ import com.amdp.android.basic.gui.utils.DependencyInjector;
 import com.amdp.android.network.NetworkContants;
 
 
+
 public class AMSplashActivity extends SplashActivity {
 
 	@Override
@@ -23,7 +24,7 @@ public class AMSplashActivity extends SplashActivity {
         DependencyInjector.setUserValidationResourceHandler(new AMUserValidationResourceHandler());
         DependencyInjector.setSearchRouteResourceHandler(new AMSearchRouteResourceHandler());
         DependencyInjector.setAfterLoginActivity(new RouteActivity());
-        DependencyInjector.setAfterRouteActivity(new AMReportVisitActivity());
+        DependencyInjector.setAfterRouteActivity(new AMWhereAmIPolarisActivity());
 
 	}
 

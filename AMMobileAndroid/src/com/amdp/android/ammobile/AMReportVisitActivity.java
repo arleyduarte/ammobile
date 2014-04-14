@@ -1,5 +1,6 @@
 package com.amdp.android.ammobile;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,10 @@ public class AMReportVisitActivity extends Activity implements IResponseActionDe
 	private EditText inoEditText;
 	private EditText egEditText;
 	private EditText datosEditText;
+	private EditText datosTEditText;
+	private EditText datosGEditText;
+	private EditText factorEEditText;
+	private EditText inoCurrierEditText;
 	private Spinner causalSpinner;
 	private AMRoute currentRoute;
 
@@ -46,6 +51,10 @@ public class AMReportVisitActivity extends Activity implements IResponseActionDe
 		inoEditText = (EditText) findViewById(R.id.inoEditText);
 		egEditText = (EditText) findViewById(R.id.egEditText);
 		datosEditText = (EditText) findViewById(R.id.datosEditText);
+		datosTEditText = (EditText) findViewById(R.id.datosTEditText);
+		datosGEditText = (EditText) findViewById(R.id.datosGEditText);
+		factorEEditText = (EditText) findViewById(R.id.factorEEditText);
+		inoCurrierEditText = (EditText) findViewById(R.id.inoCurrierEditText);
 		causalSpinner = (Spinner) findViewById(R.id.causal_spinner);
 
 		currentRoute = (AMRoute) RouteBLL.getInstance().getCurrentRoute();
@@ -133,6 +142,14 @@ public class AMReportVisitActivity extends Activity implements IResponseActionDe
 			reportVisit.setGestionOE(causalSpinner.getSelectedItem().toString());
 			reportVisit.setCausal(causalNoVisitaBLL.getItemByName(causalSpinner.getSelectedItem().toString()).getId());
 			reportVisit.setUsuarioID(UserBLL.getInstanceBLL().getCurrentUser().getUserId());
+			
+			reportVisit.setLatitud(currentRoute.getEntryLatitude());
+			reportVisit.setLongitud(currentRoute.getEntryLongitude());
+			
+			reportVisit.setDatosT(datosTEditText.getText().toString());
+			reportVisit.setDatosG(datosGEditText.getText().toString());
+			reportVisit.setInoCurrier(inoCurrierEditText.getText().toString());
+			reportVisit.setFactorE(factorEEditText.getText().toString());
 
 			int indice = causalSpinner.getSelectedItemPosition();
 			if (indice < 16) {

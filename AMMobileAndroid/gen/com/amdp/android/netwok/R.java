@@ -7,15 +7,15 @@
 package com.amdp.android.netwok;
 
 public final class R {
-	public static final class string {
-		public static final int hello = 0x7f060000;
-		public static final int yes_response = 0x7f060003;
-		public static final int msg_please_wait = 0x7f060002;
-		public static final int no_response = 0x7f060004;
-		public static final int app_name = 0x7f060001;
-		public static final int server_URL = 0x7f060005;
-	}
 	public static final class drawable {
 		public static final int ic_launcher = 0x7f020002;
+	}
+	public static final class string {
+		public static final int app_name = 0x7f080003;
+		public static final int hello = 0x7f080002;
+		public static final int msg_please_wait = 0x7f080004;
+		public static final int no_response = 0x7f080006;
+		public static final int server_URL = 0x7f080007;
+		public static final int yes_response = 0x7f080005;
 	}
 }

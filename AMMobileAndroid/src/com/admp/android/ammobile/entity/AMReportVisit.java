@@ -15,6 +15,14 @@ public class AMReportVisit extends APIEntity {
 	private String GestionOE = "";
 	private String EstadoVisitaID = "";
 	private String UsuarioID = "";
+	private String FactorE = "";
+	private String latitud = "";
+	private String longitud ="";
+	
+	
+	private String DatosT = "";
+	private String DatosG ="";
+	private String inoCurrier ="";
 
 	public String getRutaID() {
 		return RutaID;
@@ -78,6 +86,54 @@ public class AMReportVisit extends APIEntity {
 
 	public void setUsuarioID(String usuarioID) {
 		UsuarioID = usuarioID;
+	}
+
+	public String getLatitud() {
+		return latitud;
+	}
+
+	public void setLatitud(String latitud) {
+		this.latitud = latitud;
+	}
+
+	public String getLongitud() {
+		return longitud;
+	}
+
+	public void setLongitud(String longitud) {
+		this.longitud = longitud;
+	}
+
+	public String getInoCurrier() {
+		return inoCurrier;
+	}
+
+	public void setInoCurrier(String inoCurrier) {
+		this.inoCurrier = inoCurrier;
+	}
+
+	public String getDatosG() {
+		return DatosG;
+	}
+
+	public void setDatosG(String datosG) {
+		DatosG = datosG;
+	}
+
+	public String getDatosT() {
+		return DatosT;
+	}
+
+	public void setDatosT(String datosT) {
+		DatosT = datosT;
+	}
+
+	public String getFactorE() {
+		return FactorE;
+	}
+
+	public void setFactorE(String factorE) {
+		FactorE = factorE;
 	}
 
 }

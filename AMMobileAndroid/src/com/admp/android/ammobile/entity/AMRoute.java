@@ -17,6 +17,7 @@ public class AMRoute extends Route {
 	private String consecutivo = "";
 	private String hora = "";
 
+
 	public String getVenueName() {
 		String info = rutaNo + " " + hora + " " + consecutivo;
 
@@ -132,5 +133,7 @@ public class AMRoute extends Route {
 	public void setHora(String hora) {
 		this.hora = hora;
 	}
+
+
 
 }
